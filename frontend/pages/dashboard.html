@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanoLimpo - Identificação de Padrões Geográficos e Temporais de Poluição</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .chart-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+            <img src="img/logo.png" alt="OceanoLimpo" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="dashboard.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="relatorio.html">Relatórios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mapa.html">Mapa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="portal.html">Comunidade</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container my-5">
+        <h2 class="text-center">Identificação de Padrões Geográficos e Temporais de Poluição</h2>
+        <p class="text-center">Permite ações preventivas e direcionadas com base em dados geográficos e temporais.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="chart-container">
+                            <div class="card">
+                                <div class="card-header">Gráfico de Poluição por Região</div>
+                                <div class="card-body">
+                                    <canvas id="regionChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="chart-container">
+                            <div class="card">
+                                <div class="card-header">Distribuição de Tipos de Poluentes por Região</div>
+                                <div class="card-body">
+                                    <canvas id="pollutantTypeChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="chart-container">
+                            <div class="card">
+                                <div class="card-header">Evolução da Qualidade da Água</div>
+                                <div class="card-body">
+                                    <canvas id="waterQualityChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="chart-container">
+                            <div class="card">
+                                <div class="card-header">Gráfico de Poluição ao Longo do Tempo</div>
+                                <div class="card-body">
+                                    <canvas id="timeChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script>
+        // Dados de exemplo para os gráficos (substitua pelos seus dados reais)
+        var regionData = {
+            labels: ['Região A', 'Região B', 'Região C'],
+            datasets: [{
+                label: 'Níveis de Poluição',
+                data: [30, 50, 20],
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+            }]
+        };
+
+        var pollutantTypeData = {
+            labels: ['Tipo 1', 'Tipo 2', 'Tipo 3'],
+            datasets: [{
+                label: 'Distribuição de Tipos de Poluentes',
+                data: [40, 30, 30],
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+            }]
+        };
+
+        var waterQualityData = {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [{
+                label: 'Qualidade da Água',
+                data: [60, 55, 70, 65, 75, 70],
+                fill: false,
+                borderColor: '#4BC0C0',
+                tension: 0.1
+            }]
+        };
+
+        var timeData = {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [{
+                label: 'Níveis de Poluição ao Longo do Tempo',
+                data: [50, 55, 60, 50, 45, 55],
+                fill: false,
+                borderColor: '#4BC0C0',
+                tension: 0.1
+            }]
+        };
+
+        // Configuração dos gráficos
+        var regionConfig = {
+            type: 'bar',
+            data: regionData
+        };
+
+        var pollutantTypeConfig = {
+            type: 'pie',
+            data: pollutantTypeData
+        };
+
+        var waterQualityConfig = {
+            type: 'line',
+            data: waterQualityData
+        };
+
+        var timeConfig = {
+            type: 'line',
+            data: timeData
+        };
+
+        // Inicialização dos gráficos
+        var regionChart = new Chart(document.getElementById('regionChart'), regionConfig);
+        var pollutantTypeChart = new Chart(document.getElementById('pollutantTypeChart'), pollutantTypeConfig);
+        var waterQualityChart = new Chart(document.getElementById('waterQualityChart'), waterQualityConfig);
+        var timeChart = new Chart(document.getElementById('timeChart'), timeConfig);
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

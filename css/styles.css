@@ -1,0 +1,29 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: url('../img/ocean_background.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.card-header {
+    font-weight: bold;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+}
+
+.card {
+    margin-top: 20px;
+}
+
+.btn-block {
+    width: 100%;
+}
