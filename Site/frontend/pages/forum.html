@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OceanoLimpo - Reportar Poluição</title>
+    <title>OceanPro - Fórum da Comunidade</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        .form-container {
+        .container {
             margin-top: 50px;
+        }
+        .topic-card {
+            margin-bottom: 20px;
+        }
+        .btn-back {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -40,19 +47,18 @@
         </div>
     </nav>
 
-    <div class="container form-container">
-        <h2 class="text-center mb-4">Reportar Poluição</h2>
-        <form>
-            <div class="form-group">
-                <label for="location">Localização do Avistamento</label>
-                <input type="text" class="form-control" id="location" placeholder="Digite a localização">
+    <div class="container">
+        <h2 class="text-center mb-4">Fórum da Comunidade</h2>
+        <div class="card topic-card">
+            <div class="card-header">
+                <h5 class="card-title">Discussão sobre Alternativas para Reduzir o Uso de Plástico</h5>
+                <p class="card-text">Iniciada por: João Silva em 15 de Maio de 2024</p>
             </div>
-            <div class="form-group">
-                <label for="description">Descrição do Avistamento</label>
-                <textarea class="form-control" id="description" rows="3" placeholder="Descreva o que você viu"></textarea>
+            <div class="card-body">
+                <p class="card-text">Participe desta discussão sobre alternativas sustentáveis para reduzir o uso de plástico em nossa comunidade. Compartilhe suas ideias e opiniões!</p>
+                <a href="#" class="btn btn-primary btn-back">Voltar</a>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar Relatório</button>
-        </form>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

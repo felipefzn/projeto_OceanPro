@@ -1,5 +1,3 @@
-/* scripts.js */
-
 $(document).ready(function () {
     $('[data-toggle="tab"]').on('click', function (e) {
         e.preventDefault();

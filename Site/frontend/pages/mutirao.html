@@ -1,20 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Histórico de Ações Realizadas</title>
+    <title>OceanPro - Organizar Mutirão de Limpeza</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        .container {
+        .form-container {
             margin-top: 50px;
-        }
-        .action-card {
-            margin-bottom: 20px;
-        }
-        .btn-back {
-            margin-top: 20px;
         }
     </style>
 </head>
@@ -47,18 +40,23 @@
         </div>
     </nav>
 
-    <div class="container">
-        <h2 class="text-center mb-4">Histórico de Ações Realizadas</h2>
-        <div class="card action-card">
-            <div class="card-header">
-                <h5 class="card-title">Ação de Limpeza na Baía de Guanabara</h5>
-                <p class="card-text">Realizada em 25 de Abril de 2024</p>
+    <div class="container form-container">
+        <h2 class="text-center mb-4">Organizar Mutirão de Limpeza</h2>
+        <form>
+            <div class="form-group">
+                <label for="location">Local do Mutirão</label>
+                <input type="text" class="form-control" id="location" placeholder="Digite o local do mutirão">
             </div>
-            <div class="card-body">
-                <p class="card-text">Esta ação envolveu mais de 100 voluntários que trabalharam na remoção de resíduos plásticos e oleosos das águas da Baía de Guanabara, resultando na remoção de mais de 2 toneladas de poluição.</p>
-                <a href="#" class="btn btn-primary btn-back">Voltar</a>
+            <div class="form-group">
+                <label for="date">Data e Hora</label>
+                <input type="datetime-local" class="form-control" id="date">
             </div>
-        </div>
+            <div class="form-group">
+                <label for="description">Descrição do Mutirão</label>
+                <textarea class="form-control" id="description" rows="3" placeholder="Descreva o objetivo e as atividades do mutirão"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Criar Mutirão</button>
+        </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OceanoLimpo - Organizar Mutirão de Limpeza</title>
+    <title>OceanPro - Reportar Poluição</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .form-container {
@@ -41,21 +41,17 @@
     </nav>
 
     <div class="container form-container">
-        <h2 class="text-center mb-4">Organizar Mutirão de Limpeza</h2>
+        <h2 class="text-center mb-4">Reportar Poluição</h2>
         <form>
             <div class="form-group">
-                <label for="location">Local do Mutirão</label>
-                <input type="text" class="form-control" id="location" placeholder="Digite o local do mutirão">
+                <label for="location">Localização do Avistamento</label>
+                <input type="text" class="form-control" id="location" placeholder="Digite a localização">
             </div>
             <div class="form-group">
-                <label for="date">Data e Hora</label>
-                <input type="datetime-local" class="form-control" id="date">
+                <label for="description">Descrição do Avistamento</label>
+                <textarea class="form-control" id="description" rows="3" placeholder="Descreva o que você viu"></textarea>
             </div>
-            <div class="form-group">
-                <label for="description">Descrição do Mutirão</label>
-                <textarea class="form-control" id="description" rows="3" placeholder="Descreva o objetivo e as atividades do mutirão"></textarea>
-            </div>
-            <button type="submit" class="btn btn-success">Criar Mutirão</button>
+            <button type="submit" class="btn btn-primary">Enviar Relatório</button>
         </form>
     </div>
 
